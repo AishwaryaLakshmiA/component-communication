@@ -11,7 +11,7 @@ export class BlockVendorComponent implements OnInit {
 
   selectedVendor?: VendorModel;
   // vendorValue!: VendorModel={} as VendorModel;
-  vendorValue!: VendorModel;
+  vendorValue?: VendorModel;
   
   constructor(private sharedservice: SharedSelectVendorService) { }
   ngOnInit(): void {

@@ -1,6 +1,24 @@
-<div *ngIf="vendorValue">
-    <p>block-vendor works!</p>
+<div *ngIf="vendorValue"> 
+    <!-- <p>block-vendor works!</p>
     <h5>NAME: {{vendorValue.name}}</h5>
     <h5>AGE: {{vendorValue.age}}</h5>
-    <h5>CITY: {{vendorValue.city}}</h5>
+    <h5>CITY: {{vendorValue.city}}</h5> -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Vendor Name</th> 
+                <th>Vendor Age</th> 
+                <th>Vendor City</th> 
+            </tr>
+        </thead>
+            <tbody>
+                <tr>
+                    <td>{{vendorValue.name}}</td>
+                    <td>{{vendorValue.age}}</td>
+                    <td>{{vendorValue.city}}</td>
+                </tr>
+            </tbody>
+    
+    </table>
+    
 </div>

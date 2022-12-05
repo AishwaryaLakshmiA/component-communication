@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SharedSelectVendorService } from 'src/app/shared-select-vendor.service';
 import { VendorModel } from 'src/app/vendor-model';
 
@@ -13,7 +13,7 @@ export class ActiveVendorComponent implements OnInit {
     // @Input() teacher? : TeacherModel;  
   @Input() vendorList: VendorModel[]=[];
   selectedVendor:VendorModel={} as VendorModel;
-
+  @Output() sel=new EventEmitter<VendorModel>();
 
   ngOnInit(): void {
   }
@@ -23,5 +23,7 @@ export class ActiveVendorComponent implements OnInit {
     this.selectedVendor=vendor;
     console.log(this.selectedVendor);
     this.sharedvendor.setVendor(this.selectedVendor);
+    this.sel.emit(vendor);
+    console.log("sel: ", vendor);
   }
 }
