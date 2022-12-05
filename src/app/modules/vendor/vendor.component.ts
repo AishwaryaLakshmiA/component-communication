@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { VendorModel } from 'src/app/vendor-model';
+import { VendorsArrayService } from 'src/app/vendors-array.service';
 
 @Component({
   selector: 'app-vendor',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendorComponent implements OnInit {
 
-  constructor() { }
+  vendorArray: VendorModel[]=this.vendorService.getVendorList();
+  constructor(private vendorService: VendorsArrayService) { }
 
   ngOnInit(): void {
   }
-
+  // getVendorArray() : VendorModel[]
+  // {
+  //   return this.vendorService.getVendorList();
+  // }
 }
